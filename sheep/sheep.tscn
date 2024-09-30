@@ -84,6 +84,5 @@ one_way_collision_margin = 0.0
 position = Vector2(2, -2)
 scale = Vector2(0.510742, 0.510742)
 sprite_frames = SubResource("SpriteFrames_hw55n")
-animation = &"Idle"
+animation = &"jump"
 autoplay = "Idle"
-frame_progress = 0.461354
