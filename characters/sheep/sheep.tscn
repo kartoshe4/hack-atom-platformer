@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://df7hfw7eoavuo" path="res://images/Тестовый перс/run/sheep-run-5.png" id="8_q037n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bosna"]
-radius = 5.82011
-height = 26.0
+radius = 16.4021
+height = 54.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hw55n"]
 animations = [{
@@ -78,19 +78,18 @@ animations = [{
 script = ExtResource("1_h2ofo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -0.5)
+position = Vector2(-0.5, -0.5)
 scale = Vector2(0.945, 0.5)
 shape = SubResource("CapsuleShape2D_bosna")
 one_way_collision_margin = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -2)
-scale = Vector2(0.510742, 0.510742)
+position = Vector2(2, -3)
 sprite_frames = SubResource("SpriteFrames_hw55n")
 animation = &"jump"
 autoplay = "Idle"

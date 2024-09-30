@@ -49,7 +49,6 @@ centered = false
 motion_mirroring = Vector2(1152, 0)
 
 [node name="CompleteStaticBg(288X208)" type="Sprite2D" parent="ParallaxLayer"]
-visible = false
 scale = Vector2(4, 3.11538)
 texture = ExtResource("5_mg2hf")
 centered = false
