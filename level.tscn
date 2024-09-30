@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cdyl8ots0d6po"]
+[gd_scene load_steps=2 format=3 uid="uid://cdyl8ots0d6po"]
+
+[ext_resource type="PackedScene" uid="uid://doypa4iy1cctp" path="res://sheep/sheep.tscn" id="1_s3psm"]
 
 [node name="level" type="Node2D"]
 
@@ -11,3 +13,6 @@ theme_override_font_sizes/font_size = 50
 text = "Level - 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="sheep" parent="." instance=ExtResource("1_s3psm")]
+position = Vector2(348, 309)

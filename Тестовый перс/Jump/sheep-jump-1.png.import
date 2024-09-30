@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0f0la8c6d451"
-path="res://.godot/imported/sheep-idle1.png-023b531c135c73018c638351bc41c76c.ctex"
+uid="uid://cdjimnyo0qkmk"
+path="res://.godot/imported/sheep-jump-1.png-7210aa02bddf253dca91d8f75bb1b579.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sheep-idle1.png"
-dest_files=["res://.godot/imported/sheep-idle1.png-023b531c135c73018c638351bc41c76c.ctex"]
+source_file="res://Тестовый перс/Jump/sheep-jump-1.png"
+dest_files=["res://.godot/imported/sheep-jump-1.png-7210aa02bddf253dca91d8f75bb1b579.ctex"]
 
 [params]
 
