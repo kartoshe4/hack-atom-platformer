@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=3 uid="uid://doypa4iy1cctp"]
+
+[ext_resource type="Texture2D" uid="uid://bu7k2iaecwjt8" path="res://images/Тестовый перс/sheep-idle/sheep-idle.png" id="1_0n53y"]
+[ext_resource type="Script" path="res://characters/sheep/sheep.gd" id="1_h2ofo"]
+[ext_resource type="Texture2D" uid="uid://mq1f05sv7i82" path="res://images/Тестовый перс/sheep-idle/sheep-idle2.png" id="2_iixys"]
+[ext_resource type="Texture2D" uid="uid://bb4virc6633oh" path="res://images/Тестовый перс/sheep-idle/sheep-idle1.png" id="3_vj36q"]
+[ext_resource type="Texture2D" uid="uid://06ss133vcs50" path="res://images/Тестовый перс/run/sheep-run-1.png" id="4_g8uko"]
+[ext_resource type="Texture2D" uid="uid://cdjimnyo0qkmk" path="res://images/Тестовый перс/Jump/sheep-jump-1.png" id="4_rtyay"]
+[ext_resource type="Texture2D" uid="uid://csourayhfrg4d" path="res://images/Тестовый перс/Jump/sheep-jump-2.png" id="5_eo3lw"]
+[ext_resource type="Texture2D" uid="uid://bs1315ghx5lij" path="res://images/Тестовый перс/run/sheep-run-2.png" id="5_sthpb"]
+[ext_resource type="Texture2D" uid="uid://bve1ph71ky86g" path="res://images/Тестовый перс/Jump/sheep-jump-3.png" id="6_n62wp"]
+[ext_resource type="Texture2D" uid="uid://bknjnfta0543f" path="res://images/Тестовый перс/run/sheep-run-3.png" id="6_wpmkw"]
+[ext_resource type="Texture2D" uid="uid://cgnwlry4rcxx2" path="res://images/Тестовый перс/run/sheep-run-4.png" id="7_q30xo"]
+[ext_resource type="Texture2D" uid="uid://df7hfw7eoavuo" path="res://images/Тестовый перс/run/sheep-run-5.png" id="8_q037n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bosna"]
+radius = 5.82011
+height = 26.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hw55n"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": ExtResource("1_0n53y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iixys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vj36q")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("4_rtyay")
+}, {
+"duration": 1.5,
+"texture": ExtResource("5_eo3lw")
+}, {
+"duration": 1.5,
+"texture": ExtResource("6_n62wp")
+}, {
+"duration": 1.5,
+"texture": ExtResource("5_eo3lw")
+}, {
+"duration": 1.5,
+"texture": ExtResource("4_rtyay")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g8uko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sthpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wpmkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q30xo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q037n")
+}],
+"loop": false,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="sheep" type="CharacterBody2D"]
+script = ExtResource("1_h2ofo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+scale = Vector2(0.945, 0.5)
+shape = SubResource("CapsuleShape2D_bosna")
+one_way_collision_margin = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -2)
+scale = Vector2(0.510742, 0.510742)
+sprite_frames = SubResource("SpriteFrames_hw55n")
+animation = &"jump"
+autoplay = "Idle"
+frame = 4
+frame_progress = 1.0
