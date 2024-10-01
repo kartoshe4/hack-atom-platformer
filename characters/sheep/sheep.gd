@@ -3,11 +3,13 @@ extends CharacterBody2D
 var speed = 0.0
 var direction = 0
 var old_direction = 1
+var jump_velocity = 0
 
+const MAX_JUMP = 100
+const ACCELERATION_JUMP = 20.0
 const SLOWDOWN = 20.0
 const ACCELERATION = 10.0
-const MAX_SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const MAX_SPEED = 250.0
 
 
 func _physics_process(delta: float) -> void:
@@ -16,8 +18,14 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_pressed("jump") and abs(jump_velocity) < MAX_JUMP:
+		jump_velocity -= ACCELERATION
+		velocity.y += jump_velocity
+	else:
+		jump_velocity = MAX_JUMP
+	
+	if is_on_floor():
+		jump_velocity = 0
 	
 	# The uniformly accelerated motion
 	direction = Input.get_axis("left", "right")
@@ -44,5 +52,4 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("Idle")
 	
 	velocity.x = speed
-	print(speed)
 	move_and_slide()
