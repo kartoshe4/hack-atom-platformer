@@ -9,7 +9,7 @@ const MAX_JUMP = 100
 const ACCELERATION_JUMP = 20.0
 const SLOWDOWN = 20.0
 const ACCELERATION = 10.0
-const MAX_SPEED = 300.0
+const MAX_SPEED = 250.0
 
 
 func _physics_process(delta: float) -> void:
